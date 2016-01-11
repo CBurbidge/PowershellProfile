@@ -30,13 +30,16 @@ if((Test-Path $profile) -eq $false) {
 }
 
 # Add files to call to editprofile in $profile file and also 
-"`"'editprofile' - edit profile`"" > $profile
+"" > $profile
+
+". `"$sharedFile`""  >> $profile
+". `"$machineSpecificFile`""  >> $profile
+
+"`"'editprofile' - edit profile`"" >> $profile
 "function editprofile { " >> $profile 
 "    powershell_ise `"$sharedFile`" " >> $profile 
 "    powershell_ise `"$machineSpecificFile`" " >> $profile 
 "}" >> $profile
-". `"$sharedFile`""  >> $profile
-". `"$machineSpecificFile`""  >> $profile
 
 # cd to $startingDir directory set in other files
 "cd `"`$startingDir`"" >> $profile
