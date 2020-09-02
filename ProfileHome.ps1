@@ -1,5 +1,10 @@
-$repos = "F:\Repos"
-AddPlace "repos" "$repos"
-AddPlace "konnie" "$repos\Konnie"
+$devDir = "C:\Dev"
+AddPlace "dev" "$devDir"
 
-$startingDir = $repos
+$devDir = "C:\Dev"
+$source = "C:\Dev"
+$startingDir = "$source"
+
+$repoBase = $devDir
+
+$currentFile = "C:\Dev\current_wd.txt"
